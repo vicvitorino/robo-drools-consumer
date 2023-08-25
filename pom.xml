@@ -11,7 +11,7 @@
     <groupId>br</groupId>
     <artifactId>robo-drools-consumer</artifactId>
     <version>0.0.1-SNAPSHOT</version>
-    <name>robo-drools-db</name>
+    <name>robo-drools-consumer</name>
     <description>Demo project for Spring Boot</description>
     <properties>
         <java.version>11</java.version>
