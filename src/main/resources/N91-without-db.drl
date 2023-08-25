@@ -1,0 +1,27 @@
+import br.robodroolsconsumer.model.N91;
+import java.util.*;
+
+dialect "mvel"
+no-loop true
+
+rule "Parametros obrigatorios"
+    when
+        n91 : N91(coProjeto == null || coCurso == null);
+    then
+        n91.getResult().setMessage("Parametros obrigatorios nao informados");
+end
+
+rule "Projeto valido"
+    when
+        n91 : N91(coProjeto != 1 && coProjeto != 2);
+    then
+       	n91.getResult().setMessage("Projeto invalido");
+end
+
+rule "Curso valido"
+    when
+        n91 : N91(coCurso != 10 && coCurso != 20);
+    then
+       	n91.getResult().setMessage("Curso invalido");
+end
+

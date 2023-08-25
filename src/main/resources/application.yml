@@ -1,0 +1,31 @@
+server:
+    servlet:
+        contextPath: /rest
+    port: 8081
+
+spring:
+    artemis:
+        broker-url: tcp://localhost:61616
+        user: admin
+        password: admin
+    jpa:
+        properties:
+            hibernate:
+                show_sql: true
+                format_sql: false
+                generate_statistics: false
+        defer-datasource-initialization: true
+    sql:
+        init:
+            mode: always
+    hibernate:
+        ddl-auto: create
+    datasource:
+        url: jdbc:h2:mem:arquetipo;DB_CLOSE_DELAY=-1;DB_CLOSE_ON_EXIT=FALSE
+        username: sa
+        password: sa
+    cache:
+        type: redis
+    redis:
+        host: localhost
+        port: 6379
